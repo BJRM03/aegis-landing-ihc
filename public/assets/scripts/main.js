@@ -1,1 +1,1 @@
-console.log("Aegis Landing Page cargada correctamente");
+console.log("Landing Aegis lista (rama feature/landing-structure)");
