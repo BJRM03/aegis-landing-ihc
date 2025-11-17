@@ -614,3 +614,116 @@ body {
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
+/* ========== NAVBAR LINK ACTIVO ========== */
+
+.navbar__links a.navbar__link--active {
+    color: #38bdf8;
+    position: relative;
+}
+
+.navbar__links a.navbar__link--active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.35rem;
+    margin: 0 auto;
+    width: 28px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #22d3ee, #6366f1);
+}
+
+/* ========== HERO CARD INTERACTIVA ========== */
+
+.hero__card {
+    transition: transform 0.18s ease-out, box-shadow 0.2s ease-out;
+}
+
+.hero__card:hover {
+    box-shadow: 0 38px 90px rgba(15, 23, 42, 1);
+}
+
+/* ========== ANIMACIONES DE APARICIÓN ========== */
+
+.hero,
+.section,
+.team-card,
+.card {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.hero.is-visible,
+.section.is-visible,
+.team-card.is-visible,
+.card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== MICRO-ANIMACIONES DE HOVER EN CARDS ========== */
+
+.card,
+.team-card {
+    transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.55);
+}
+
+.section--light .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 70px rgba(148, 163, 184, 0.55);
+}
+
+.team-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 22px 60px rgba(148, 163, 184, 0.55);
+}
+
+/* ========== TAGS / CHIPS CON PULSO SUAVE ========== */
+
+.tag {
+    position: relative;
+    overflow: hidden;
+}
+
+.tag::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(circle at top, rgba(56, 189, 248, 0.25), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+
+.tag:hover::before {
+    opacity: 1;
+}
+
+/* ========== BOTÓN ESTADOS (EN ENVÍO / OK) ========== */
+
+.btn--sending {
+    opacity: 0.85;
+    cursor: wait;
+}
+
+.btn--success {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    box-shadow: 0 18px 35px rgba(34, 197, 94, 0.65);
+}
+
+/* ========== BOTONES EN SECCIÓN "CÓMO FUNCIONA" ========== */
+
+.section__buttons {
+    margin-top: 1.6rem;
+}
+
+.section__buttons .btn {
+    min-width: 210px;
+}
